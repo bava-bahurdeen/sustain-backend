@@ -1,9 +1,8 @@
 import User from "../models/uer.model.js";
-import Ticket from "../models/ticket.model.js";
+
 
 export const UserdetailIndex = async (req,res) => {
 
-    // create a user
   try {
     const user=await User.find()
     return res.json(user)
@@ -38,17 +37,5 @@ export const Userdetail = async (req,res) => {
   
 };
 
-export const Ticketpush=async(req,res)=>{
-  const ticket=new Ticket(req.body) 
-  
-  
-  try {
-const newticket= await ticket.save()
-res.status(201).json(newticket+"Successfully  Ticket Raised")
 
-  } catch (error) {
-    console.log(error.message)
-    res.status(500).json({message:"Ticket not saved"})
-  }
-}
 

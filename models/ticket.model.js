@@ -19,24 +19,24 @@ const TicketSchema=mongoose.Schema({
         required:true,  
     },
     plastic:{
-        type:String,
+        type:Number,
         required:true, 
     },
     paper:{
-        type:String,
+        type:Number,
         required:true,   
     },
     old_untorn_dresses:{
-        type:String,
+        type:Number,
         required:true,   
     },
     decarative_materials:{
-        type:String,
+        type:Number,
         required:true,   
     },
 
 leather:{
-    type:String,
+    type:Number,
     required:true,  
 },
 
