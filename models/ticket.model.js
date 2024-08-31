@@ -42,7 +42,7 @@ const TicketSchema=mongoose.Schema({
 
 leather:{
     type:Number,
-    required:true,  
+  
 },
 
 })
