@@ -13,6 +13,7 @@ const TicketSchema=mongoose.Schema({
     email:{
         type:String,
         required:true,
+        unique:false
        
     },
     place:{
