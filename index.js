@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use("/users",Userroutes)
 app.use("/ticket",Ticektroutes)
-app.use("/ticket/:id",Ticektroutes)
+app.use("/ticketById",Ticektroutes)
 app.use("/",Adminroutes)
 //server run
 app.listen(process.env.PORT,()=>{
