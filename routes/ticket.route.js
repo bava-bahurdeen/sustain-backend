@@ -4,6 +4,6 @@ const router=express.Router()
 
 router.post('/',Ticketpush)
 router.get('/',Ticketpull)
-router.get('/',TicetbyId)
+router.get('/:id',TicetbyId)
 
 export default router
