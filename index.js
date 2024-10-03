@@ -21,7 +21,7 @@ app.use("/ticket/:id",Ticektroutes)
 app.use("/",Adminroutes)
 //server run
 app.listen(process.env.PORT,()=>{
-    console.log("port run on 5000");
+    console.log("port run on 5000")
     
 })
 
