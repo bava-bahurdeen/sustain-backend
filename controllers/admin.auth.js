@@ -1,6 +1,5 @@
 import Admin from "../models/admin.model.js";
-import bycrypt from 'bcrypt'
-import { errorhandler } from "../utils/error.js";
+import bcrypt from "bcrypt"
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 dotenv.config()
@@ -10,7 +9,7 @@ dotenv.config()
 export const adminSignup=async(req,res)=>{
     try {
        const {name,email,password}=req.body
-       const hashedpassword=bycrypt.hashSync(password,10)
+       const hashedpassword=bcrypt.hashSync(password,10)
        const admin = new Admin({name,email,password:hashedpassword})
 
       await admin.save()
@@ -27,7 +26,7 @@ export const adminSignin=async(req,res)=>{
         const validUser= await Admin.findOne({email})
         if(!validUser) return console.log("user not ");
         
-            const validPassword=bycrypt.compareSync(password,validUser.password)
+            const validPassword=bcrypt.compareSync(password,validUser.password)
         if(!validPassword) return console.log("password credential");
         
             const token=jwt.sign({id:validUser._id},process.env.JWT_SECRECT)
